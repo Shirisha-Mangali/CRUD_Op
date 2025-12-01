@@ -6,6 +6,10 @@ const app=express();// creates an Express application
 const postsRouter=require('./routes/posts');
 app.use(express.json());
 
+app.get('/',(req,res)=>{
+    res.send("home page")
+});
+
 app.use('/posts', postsRouter);
 
 app.listen(3000,()=>{
